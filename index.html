@@ -2,24 +2,32 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Mercy Statistics</title>
+<title>Cute Planets</title>
 <!-- Very important to incklude, scales our pages properly for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
 <link href="css/main.css" rel="stylesheet" type="text/css">
 <script src="js/anime.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 </head>
 
 <body>
-	<main id="container">
+	<main id="galaxy">
 
 		<section id="earth">
-            <object data="images/earth.svg" type="image/svg+xml" id="1" class="svg-graphic"></object>
+            <object v-on:click="getData" data="images/earth.svg" type="image/svg+xml" id="1" data-roundaboutindex="1" class="svg-graphic"></object>
             <p class="planet-info">
             <span> This is Earth</span>
             Earth is super cute.
-            </p>
+			</p>
+			
+
+			<div class="holder">
+				<h4 class="name">{{ planetHeader }}</h4>
+				<p class="info">{{ planetInfo }}</p>
+			</div>
 		</section>
 		
 		<section id="mars">
@@ -28,6 +36,11 @@
 				<span> This is Mars</span>
 				Mars is super badass.
 				</p>
+
+				<div class="holder">
+					<h4 class="name">{{ planetHeader }}</h4>
+					<p class="info">{{ planetInfo }}</p>
+				</div>
 			</section>
 
 			<section id="pluto">
@@ -36,8 +49,13 @@
 					<span> This is Pluto</span>
 					Pluto is cute.
 					</p>
+					
+					<div class="holder">
+						<h4 class="name">{{ planetHeader }}</h4>
+						<p class="info">{{ planetInfo }}</p>
+					</div>
 				</section>
-			
+	</main>		
 	<script src="js/main.js"></script>
 </body>
 </html>
